@@ -1,6 +1,7 @@
 import Footer from './Footer';
 import Note from './Note';
 import Header from './Header';
+import notes from '../notes';
 
 
 export default function App() {
@@ -8,7 +9,9 @@ export default function App() {
 		<div>
 			<Header />
 	
-			<Note />
+			{notes.map(e => {
+				return <Note key={e.key} title={e.title} content={e.content} />
+			})}
 	
 			<Footer />
 		</div>
