@@ -12,6 +12,11 @@ export default function App() {
 		setNotes([...notes, newNote]);
 	}
 
+	function handleDeleteNote(noteId) {
+		const newNotes = notes.filter((n) => n.id !== noteId);
+		setNotes(newNotes);
+	}
+
 	return (
 		<div>
 			<Header />
@@ -19,7 +24,12 @@ export default function App() {
 			<CreateArea handleAddNewNote={handleAddNewNote} />
 	
 			{notes.map(n => {
-				return <Note key={n.content} title={n.title} content={n.content} />
+				return <Note 
+						key={n.id}
+						id={n.id}
+						title={n.title}
+						content={n.content}
+						handleDeleteNote={handleDeleteNote} />
 			})}
 	
 			<Footer />
