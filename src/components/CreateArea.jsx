@@ -21,7 +21,7 @@ export default function CreateArea(props) {
 
   return (
     <div>
-      <form>
+      <form className="create-note">
         <input value={note.title} onChange={handleTitleChanged} name="title" placeholder="Title" />
 
         <textarea

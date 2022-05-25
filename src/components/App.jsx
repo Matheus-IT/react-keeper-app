@@ -30,7 +30,7 @@ export default function App() {
             title={n.title}
             content={n.content}
             handleDeleteNote={handleDeleteNote}
-          />;
+          />
         );
       })}
 
